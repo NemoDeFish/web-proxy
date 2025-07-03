@@ -1,0 +1,20 @@
+# Expectation:
+# For Pass, server exits with <= 128 or 134 (not memory error)
+# For Pass+Bonus, subsequent curl request succeeds and response is correct, server terminates normally after SIGINT
+# Otherwise, 0 is awarded
+
+0.00 X start-task5-new 8080
+
+0.00 X curl-post -X POST http://localhost/seed -H 'Content-Type: text/plain' --data '30023'
+0.00 X curl --proxy http://localhost:8080 http://localhost/gen-plain/100000000 --max-time 30
+
+# Ensure that some bytes are received
+0.00 X check-recv 0
+
+# Kill the client
+0.00 X kill-curl 0
+
+# Response from origin server
+0.00 X curl --proxy http://localhost:8080 http://localhost --max-time 3
+
+0.10+0.01 0 score-task5-new 1 response.helloworld

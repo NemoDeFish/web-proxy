@@ -1,0 +1,124 @@
+Accepted
+Request tail X-500-4: 33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+GETting localhost http://localhost/echo4
+Response body length 27
+Accepted
+Request tail X-500-4: 33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+GETting localhost http://localhost/hidden/zeros/102400
+Response body length 102400
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/zeros/102400
+Response body length 102400
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/a?cache-control=no-store
+Response body length 1
+Not caching localhost http://localhost/a?cache-control=no-store
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/a
+Response body length 2
+Accepted
+Request tail User-Agent: COMP30023
+Serving localhost http://localhost/a from cache
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?1
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?2
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?3
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?4
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?5
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?6
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?7
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?8
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?9
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+Evicting localhost http://localhost/a from cache
+GETting localhost http://localhost/hidden/zeros/102400
+Response body length 102400
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?10
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+Evicting localhost http://localhost/hidden/ohce/comp30023?1 from cache
+GETting localhost http://localhost/hidden/b
+Response body length 1
+Not caching localhost http://localhost/hidden/b
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/ohce/comp30023?11
+Response body length 9
+Accepted
+Request tail User-Agent: COMP30023
+Evicting localhost http://localhost/hidden/ohce/comp30023?2 from cache
+GETting localhost http://localhost/hidden/b
+Response body length 2
+Accepted
+Request tail User-Agent: COMP30023
+Serving localhost http://localhost/hidden/b from cache
+Accepted
+Request tail User-Agent: COMP30023
+Evicting localhost http://localhost/hidden/ohce/comp30023?3 from cache
+GETting localhost http://localhost/hidden/echo8
+Response body length 10
+Accepted
+Request tail User-Agent: COMP30023
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Response body length 102411
+Evicting localhost http://localhost/hidden/echo8 from cache
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/echo8
+Response body length 10
+Accepted
+Request tail User-Agent: COMP30023
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Response body length 12
+Not caching localhost http://localhost/hidden/echo8
+Evicting localhost http://localhost/hidden/echo8 from cache
+Accepted
+Request tail User-Agent: COMP30023
+GETting localhost http://localhost/hidden/echo8
+Response body length 10
+Accepted
+Request tail User-Agent: COMP30023
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Response body length 31
+Accepted
+Request tail User-Agent: COMP30023
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Serving localhost http://localhost/hidden/echo8 from cache
+Entry for localhost http://localhost/hidden/echo8 unmodified

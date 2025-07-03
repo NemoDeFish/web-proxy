@@ -1,0 +1,30 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/b?q1
+Response body length 1
+Not caching localhost http://localhost/hidden/b?q1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/b
+Response body length 2
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/b?q2
+Response body length 3
+Not caching localhost http://localhost/hidden/b?q2
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/b from cache
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/b?q3
+Response body length 5
+Not caching localhost http://localhost/hidden/b?q3
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/b from cache
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/b?q3
+Response body length 7
+Not caching localhost http://localhost/hidden/b?q3

@@ -1,0 +1,10 @@
+Accepted
+Request tail X-unimelb: ##
+GETting localhost http://localhost/hidden/echo8
+Response body length 13
+Accepted
+Request tail X-unimelb: ##
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Serving localhost http://localhost/hidden/echo8 from cache
+Entry for localhost http://localhost/hidden/echo8 unmodified

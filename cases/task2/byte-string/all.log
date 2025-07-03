@@ -1,0 +1,11 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/a
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/A
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/ohce/a from cache

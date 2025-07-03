@@ -1,0 +1,7 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/xcc
+Response body length 38
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/xcc from cache

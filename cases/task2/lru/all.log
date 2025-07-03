@@ -1,0 +1,61 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/0
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/1
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/2
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/3
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/4
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/5
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/6
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/7
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/8
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/ohce/9
+Response body length 1
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/ohce/0 from cache
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Evicting localhost http://localhost/hidden/ohce/1 from cache
+GETting localhost http://localhost/hidden/ohce/11
+Response body length 2
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Serving localhost http://localhost/hidden/ohce/3 from cache
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Evicting localhost http://localhost/hidden/ohce/2 from cache
+GETting localhost http://localhost/hidden/ohce/13
+Response body length 2
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+Evicting localhost http://localhost/hidden/ohce/4 from cache
+GETting localhost http://localhost/hidden/ohce/14
+Response body length 2

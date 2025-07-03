@@ -1,0 +1,18 @@
+Accepted
+Request tail X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified
+GETting localhost http://localhost/hidden/echo8
+Response body length 36
+Accepted
+Request tail X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Serving localhost http://localhost/hidden/echo8 from cache
+Entry for localhost http://localhost/hidden/echo8 unmodified
+Accepted
+Request tail X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified
+Stale entry for localhost http://localhost/hidden/echo8
+GETting localhost http://localhost/hidden/echo8
+Response body length 38
+Accepted
+Request tail X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified
+Serving localhost http://localhost/hidden/echo8 from cache

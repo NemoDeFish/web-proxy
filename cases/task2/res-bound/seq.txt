@@ -1,0 +1,18 @@
+0.00 X start 8080
+
+0.00 X curl-post -X POST http://localhost/hidden/b --data ''
+
+0.00 X curl-post -X POST http://localhost/hidden/b --data '(101000)'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/b
+0.00 X wait 0
+0.00 X curl-post -X POST http://localhost/hidden/b --data '(1)'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/b
+0.00 X wait 1
+
+# 100 kiB is 102400 bytes
+# A response of 101000 should still be cachable
+0.00 X response 0 9b24f538501fb7fa0d1e009ec1039bc6a8daa93f3996aa76c4396410eb814447
+0.00 X response 1 9b24f538501fb7fa0d1e009ec1039bc6a8daa93f3996aa76c4396410eb814447
+0.00 X log all.log
+
+0.25 0 stop

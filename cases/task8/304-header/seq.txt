@@ -1,0 +1,36 @@
+0.00 X start 8080
+
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(0)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/echo8 --header 'X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified'
+0.00 X wait 0
+0.00 X response 0 response
+
+0.00 X sleep 2
+
+# Stale now, but unmodified
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/echo8 --header 'X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified'
+0.00 X wait 1
+0.00 X response 1 response
+
+# Change content
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(1)'
+# Change modified date
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+
+# This should trigger a 200 instead of 304
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/echo8 --header 'X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified'
+0.00 X wait 2
+0.00 X response 2 response2
+
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(2)'
+
+# The new response should be cached
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/echo8 --header 'X-Echo-In-Response-Header: HTTP/1.1 304 Not Modified'
+0.00 X wait 3
+0.00 X response 3 response2
+
+0.00 X log8 all.log
+0.20 0 stop

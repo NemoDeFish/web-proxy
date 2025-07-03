@@ -1,0 +1,4 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting 127.0.0.2 http://127.0.0.2/hidden/
+Response body length 24

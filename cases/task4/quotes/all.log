@@ -1,0 +1,12 @@
+Accepted
+Request tail X-COMP30023-2025: HI
+GETting localhost http://localhost/hidden/ohce4
+Response body length 56
+Accepted
+Request tail X-COMP30023-2025: HI
+Stale entry for localhost http://localhost/hidden/ohce4
+GETting localhost http://localhost/hidden/ohce4
+Response body length 28
+Accepted
+Request tail X-COMP30023-2025: HI
+Serving localhost http://localhost/hidden/ohce4 from cache

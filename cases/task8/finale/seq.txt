@@ -1,0 +1,189 @@
+# Finale - Happy path
+
+0.00 X start 65535
+
+# Less: False, Cache: None, Stale: None, Empty Slot: None, 304: None, Task2: None, Task3: None
+# Request too long
+# State (after): No entry in cache
+0.00 X curl --proxy http://localhost:65535 http://localhost/echo4 --header 'X-500-1: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' --header 'X-500-2: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111' --header 'X-500-3: 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222' --header 'X-500-4: 33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333'
+0.00 X wait 0
+0.00 X response 0 response.0
+
+# Less: False, Cache: None, Stale: None, Empty Slot: None, 304: None, Task2: True, Task3: False
+# Request, Response too long
+# State (after): No entry in cache
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/zeros/102400 --header 'X-500-1: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000' --header 'X-500-2: 11111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111' --header 'X-500-3: 22222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222222' --header 'X-500-4: 33333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333'
+0.00 X wait 1
+0.00 X response 1 f627ca4c2c322f15db26152df306bd4f983f0146409b81a4341b9b340c365a16
+
+# Less: True, Cache: False, Stale: None, Empty Slot: True, 304: None, Task2: False, Task3: None
+# Response too long
+# State (after): No entry in cache
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/zeros/102400 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 2
+0.00 X response 2 f627ca4c2c322f15db26152df306bd4f983f0146409b81a4341b9b340c365a16
+
+# Less: True, Cache: False, Stale: None, Empty Slot: True, 304: None, Task2: True, Task3: False
+# Not cacheable due to header
+# State (after): No entry in cache
+0.00 X curl-post -X POST http://localhost/a --data '1'
+0.00 X curl --proxy http://localhost:65535 http://localhost/a?cache-control=no-store --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 3
+0.00 X response 3 response.3
+
+# Less: True, Cache: False, Stale: None, Empty Slot: True, 304: None, Task2: True, Task3: True
+# Cacheable
+# State (after): [a]
+0.00 X curl-post -X POST http://localhost/a --data '2'
+0.00 X curl --proxy http://localhost:65535 http://localhost/a --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 4
+0.00 X response 4 response.4
+
+# Less: True, Cache: True, Stale: False, Empty Slot: None, 304: None, Task2: None, Task3: None
+# Cached
+# State (after): [a]
+0.00 X curl-post -X POST http://localhost/a --data '3'
+0.00 X curl --proxy http://localhost:65535 http://localhost/a --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 5
+0.00 X response 5 response.4
+
+# Fill the cache
+# State (after): [a, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?1 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 6
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?2 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 7
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?3 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 8
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?4 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 9
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?5 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 10
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?6 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 11
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?7 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 12
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 13
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?9 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 14
+0.00 X response 6 response.6
+0.00 X response 7 response.6
+0.00 X response 8 response.6
+0.00 X response 9 response.6
+0.00 X response 10 response.6
+0.00 X response 11 response.6
+0.00 X response 12 response.6
+0.00 X response 13 response.6
+0.00 X response 14 response.6
+
+# Less: True, Cache: False, Stale: None, Empty Slot: False, 304: None, Task2: False, Task3: None
+# Response too long
+# State (after): [1, 2, 3, 4, 5, 6, 7, 8, 9, X]
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/zeros/102400 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 15
+0.00 X response 15 f627ca4c2c322f15db26152df306bd4f983f0146409b81a4341b9b340c365a16
+
+# Fill the cache
+# State (after): [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?10 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 16
+0.00 X response 16 response.6
+
+# Less: True, Cache: False, Stale: None, Empty Slot: False, 304: None, Task2: True, Task3: False
+# Not cacheable
+# State (after): [2, 3, 4, 5, 6, 7, 8, 9, 10, X]
+0.00 X curl-post -X POST http://localhost/hidden/b --data '(1)'
+0.00 X curl-post -X POST http://localhost/hidden/b --data 'max-age=0'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/b --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 17
+0.00 X response 17 response.17
+
+# Fill the cache
+# State (after): [2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/ohce/comp30023?11 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 18
+0.00 X response 18 response.6
+
+# Less: True, Cache: False, Stale: None, Empty Slot: False, 304: None, Task2: True, Task3: True
+# Eviction, with new entry cached
+# State (after): [3, 4, 5, 6, 7, 8, 9, 10, 11, b]
+0.00 X curl-post -X POST http://localhost/hidden/b --data '(2)'
+0.00 X curl-post -X POST http://localhost/hidden/b --data ''
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/b --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 19
+0.00 X response 19 response.19
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/b --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 20
+0.00 X response 20 response.19
+
+# Prepare stale entry
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, echo8]
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(0)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 21
+0.00 X response 21 response.21
+0.00 X sleep 2
+
+# Less: True, Cache: True, Stale: True, Empty Slot: None, 304: False, Task2: False, Task3: None
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, X]
+# New response too long
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(102400)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 22
+0.00 X response 22 a5d8a8293d900f7ccefe21a8e9c1af02ae2b219a0bc8cbb69a75b1f08627759a
+
+# Prepare stale entry
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, echo8]
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(0)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 23
+0.00 X response 23 response.21
+0.00 X sleep 2
+
+# Less: True, Cache: True, Stale: True, Empty Slot: None, 304: False, Task2: True, Task3: False
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, X]
+# New response not cacheable
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(1)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=0'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 24
+0.00 X response 24 response.24
+
+# Prepare stale entry
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, echo8]
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(0)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 25
+0.00 X response 25 response.21
+0.00 X sleep 2
+
+# Less: True, Cache: True, Stale: True, Empty Slot: None, 304: False, Task2: True, Task3: True
+# State (after): [4, 5, 6, 7, 8, 9, 10, 11, b, echo8 (new)]
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'set-modified'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data '(20)'
+0.00 X curl-post -X POST http://localhost/hidden/echo8 --data 'max-age=2'
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 26
+0.00 X response 26 response.26
+0.00 X sleep 3
+
+# Less: True, Cache: True, Stale: True, Empty Slot: None, 304: True, Task2: None, Task3: None
+# Unmodified
+0.00 X curl --proxy http://localhost:65535 http://localhost/hidden/echo8 --header 'Accept:' --header 'User-Agent: COMP30023' --header 'Proxy-Connection:'
+0.00 X wait 27
+0.00 X response 27 response.26
+
+0.00 X log8 all.log
+
+# Yay!
+0.20 0 stop

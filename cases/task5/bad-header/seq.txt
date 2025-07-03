@@ -1,0 +1,24 @@
+# Expectation:
+# For Pass, server exits with <= 128 or 134 (not memory error)
+# For Pass+Bonus, subsequent curl request succeeds and response is correct, server terminates normally after SIGINT
+# Otherwise, 0 is awarded
+
+0.00 X start-task5-new 8080
+
+# Bad request lines
+0.00 X send \r\n\r\n
+0.00 X send GET\r\n\r\n
+0.00 X send GET\x20\x20HTTP/1.1\r\n\r\n
+0.00 X send GET\x20HTTP/1.1\r\n\r\n
+0.00 X send POST\x20http://localhost\x20HTTP/1.1\r\nHost:localhost\r\n\r\n
+
+# Send HTTP 1.0
+0.00 X send GET\x20http://localhost\x20HTTP/1.0\r\n\r\n
+
+# Send request with no headers
+0.00 X send GET\x20http://localhost\x20HTTP/1.1\r\n\r\n
+
+# Hello world
+0.00 X curl --proxy http://localhost:8080 http://localhost --max-time 3
+
+0.05+0.01 0 score-task5-new 0 response.helloworld

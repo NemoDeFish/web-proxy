@@ -1,0 +1,9 @@
+0.00 X start 8080
+
+0.00 X curl-sha --proxy http://localhost:8080 http://localhost/hidden/zeros/2000000000
+
+0.20 2 log_length all.log
+0.25 5 response-continue 0 response
+0.00 X log-continue all.log
+
+0.00 X stop

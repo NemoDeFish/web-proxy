@@ -1,0 +1,15 @@
+# Expectation:
+# For Pass, server exits with <= 128 or 134 (not memory error)
+# For Pass, subsequent curl request succeeds and response is correct, server terminates normally after SIGINT
+# Otherwise, 0 is awarded
+
+0.00 X start-task5-new 8080
+
+# Don't care what happens to this
+0.00 X curl --proxy http://localhost:8080 http://localhost/te/te
+0.00 X wait-ignore 0
+
+# Response from origin server
+0.00 X curl --proxy http://localhost:8080 http://localhost/robots.txt --max-time 3
+
+0.05+0.02 0 score-task5-new 1 response

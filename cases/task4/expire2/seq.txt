@@ -1,0 +1,65 @@
+0.00 X start 8080
+
+# 0 with age 1
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(0)'
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/0 --header 'X-COMP30023: Hi'
+0.00 X wait 0
+
+# 1 with age 4
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(1)'
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data 'max-age=4'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/1 --header 'X-COMP30023: Hi'
+0.00 X wait 1
+
+# 2 with age 1
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(2)'
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data 'max-age=1'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/2 --header 'X-COMP30023: Hi'
+0.00 X wait 2
+
+0.00 X response 0 response.0
+0.00 X response 1 response.1
+0.00 X response 2 response.2
+
+0.00 X sleep 2
+
+# 1 not expired
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(3)'
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data 'max-age=10'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/1 --header 'X-COMP30023: Hi'
+0.00 X wait 3
+0.00 X response 3 response.1
+
+# 0 Expired
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/0 --header 'X-COMP30023: Hi'
+0.00 X wait 4
+
+# 2 Expired
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/2 --header 'X-COMP30023: Hi'
+0.00 X wait 5
+
+0.00 X response 4 response.4
+0.00 X response 5 response.4
+
+0.00 X sleep 3
+
+# Expired
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(4)'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/1 --header 'X-COMP30023: Hi'
+0.00 X wait 6
+0.00 X response 6 response.6
+
+# From cache
+0.00 X curl-post -X POST http://localhost/hidden/ohce4 --data '(5)'
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/0 --header 'X-COMP30023: Hi'
+0.00 X wait 7
+0.00 X response 7 response.4
+
+# From cache
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/ohce4/1 --header 'X-COMP30023: Hi'
+0.00 X wait 8
+0.00 X response 8 response.6
+
+0.00 X log all.log
+0.15 2 stop

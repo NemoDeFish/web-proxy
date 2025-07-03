@@ -1,0 +1,12 @@
+0.00 X start 1
+0.00 X log empty.log
+
+# Connect to loopback ipv4 address
+0.00 X curl --proxy http://127.0.0.2:1 http://127.0.0.2/hidden/
+0.00 X wait-continue 0
+
+0.20 0 log_accept all.log
+0.00 X response-continue 0 response
+0.00 X log-continue all.log
+
+0.00 X stop

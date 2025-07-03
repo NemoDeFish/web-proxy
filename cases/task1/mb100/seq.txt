@@ -1,0 +1,10 @@
+0.00 X start 8080
+
+0.00 X curl --proxy http://localhost:8080 http://localhost/hidden/zeros/10000000
+0.00 X wait-continue 0
+
+0.20 2 log_length all.log
+0.25 5 response-continue 0 f5e02aa71e67f41d79023a128ca35bad86cf7b6656967bfe0884b3a3c4325eaf
+0.00 X log-continue all.log
+
+0.00 X stop

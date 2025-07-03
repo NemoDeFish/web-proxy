@@ -1,0 +1,21 @@
+Accepted
+Request tail Host: ip4
+GETting ip4 http://ip4/echo/0
+Response body length 1
+Accepted
+Request tail Host: localhost
+GETting localhost http://localhost/echo/1
+Response body length 1
+Accepted
+Request tail Host: ip6
+GETting ip6 http://ip6/echo/2
+Response body length 1
+Accepted
+Request tail Host: ip6
+Serving ip6 http://ip6/echo/2 from cache
+Accepted
+Request tail Host: localhost
+Serving localhost http://localhost/echo/1 from cache
+Accepted
+Request tail Host: ip4
+Serving ip4 http://ip4/echo/0 from cache

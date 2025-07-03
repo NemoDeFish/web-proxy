@@ -1,0 +1,12 @@
+Accepted
+Request tail X-unimelb-2025: I
+GETting localhost http://localhost/hidden/ohce4
+Response body length 38
+Accepted
+Request tail X-unimelb-2025: I
+Stale entry for localhost http://localhost/hidden/ohce4
+GETting localhost http://localhost/hidden/ohce4
+Response body length 28
+Accepted
+Request tail X-unimelb-2025: I
+Serving localhost http://localhost/hidden/ohce4 from cache

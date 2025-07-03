@@ -1,0 +1,10 @@
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/cc
+Response body length 27
+Not caching localhost http://localhost/hidden/cc
+Accepted
+Request tail Proxy-Connection: Keep-Alive
+GETting localhost http://localhost/hidden/cc
+Response body length 27
+Not caching localhost http://localhost/hidden/cc

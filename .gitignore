@@ -1,0 +1,7 @@
+htproxy
+*.o
+*.DS_Store
+*.exe
+target/
+.vscode
+*.dSYM
