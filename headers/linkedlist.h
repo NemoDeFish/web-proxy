@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 

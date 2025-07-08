@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #ifndef HTPROXY_H
 #define HTPROXY_H
 

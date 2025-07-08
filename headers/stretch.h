@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #ifndef STRETCH_H
 #define STRETCH_H
 

@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #ifndef SOCKETS_H
 #define SOCKETS_H
 

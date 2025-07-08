@@ -1,5 +1,6 @@
 /*
-This file contains all the functions that create needed sockets.
+    This file contains all the functions that create needed sockets.
+    Written by Si Yong Lim and Ella McKercher.
 */
 
 #define _POSIX_C_SOURCE 200112L

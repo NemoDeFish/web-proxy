@@ -1,3 +1,4 @@
+# Written by Si Yong Lim.
 #!/bin/bash
 
 SECTION="$1"

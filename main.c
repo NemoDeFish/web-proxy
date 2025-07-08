@@ -1,3 +1,8 @@
+/*
+    This file contains all the helper functions for the proxy.
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #include "headers/sockets.h"
 #include "headers/htproxy.h"
 #include "headers/htproxyutils.h"

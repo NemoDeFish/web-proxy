@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim.
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>

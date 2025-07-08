@@ -1,5 +1,6 @@
 /*
-This file contains the main functionality for the proxy.
+    This file contains the main functionality for the proxy.
+    Written by Si Yong Lim and Ella McKercher.
 */
 
 #define _POSIX_C_SOURCE 200112L

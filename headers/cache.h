@@ -1,3 +1,7 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
+
 #ifndef CACHE_H
 #define CACHE_H
 

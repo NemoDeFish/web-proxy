@@ -1,5 +1,6 @@
 /*
-This file contains the functionality for the cache.
+    This file contains the functionality for the cache.
+    Written by Si Yong Lim and Ella McKercher.
 */
 
 #define _POSIX_C_SOURCE 200112L

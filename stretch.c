@@ -1,3 +1,6 @@
+/*
+    Written by Si Yong Lim and Ella McKercher.
+*/
 #define _POSIX_C_SOURCE 200112L
 #include <netdb.h>
 #include <arpa/inet.h>
